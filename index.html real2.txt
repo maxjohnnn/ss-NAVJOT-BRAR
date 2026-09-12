@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gautam Jha | Stock Market Education</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0805;
+      color: #f5eee8;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: auto;
+      padding: 45px 25px 35px;
+      text-align: center;
+      background: linear-gradient(180deg, #1d0d04 0%, #0d0805 65%);
+      min-height: 100vh;
+    }
+
+    .profile-img {
+      width: 178px;
+      height: 178px;
+      object-fit: cover;
+      border-radius: 42px;
+      border: 5px solid #f15b16;
+      padding: 3px;
+      background: #241006;
+      box-shadow: 0 0 20px rgba(241, 91, 22, 0.25);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-top: 27px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 21px;
+      color: #c9b9aa;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    .verified {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 10px 22px;
+      border: 1px solid #71320f;
+      border-radius: 25px;
+      color: #f2b18d;
+      background: rgba(88, 38, 12, 0.25);
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 42px;
+    }
+
+    .stat-box {
+      border: 1px solid #71320f;
+      border-radius: 25px;
+      padding: 24px 8px;
+      background: rgba(45, 19, 8, 0.35);
+    }
+
+    .stat-box strong {
+      display: block;
+      color: #ed5a1a;
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .stat-box span {
+      color: #aa9b90;
+      font-size: 16px;
+    }
+
+    .features {
+      text-align: left;
+      margin-top: 45px;
+      margin-bottom: 42px;
+      padding-left: 18px;
+    }
+
+    .feature {
+      position: relative;
+      border-left: 3px solid #78310e;
+      padding: 0 0 31px 29px;
+      font-size: 21px;
+      color: #e4d9d1;
+      line-height: 1.4;
+    }
+
+    .feature:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .feature::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: #f15b16;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(241, 91, 22, 0.3);
+    }
+
+    .join-btn {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      gap: 20px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(180deg, #2da9e5, #087db9);
+      border: 1px solid #4dc2f5;
+      border-radius: 28px;
+      padding: 22px 28px;
+      box-shadow: 0 8px 28px rgba(0, 145, 220, 0.35);
+      transition: 0.25s;
+    }
+
+    .join-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0, 145, 220, 0.5);
+    }
+
+    .telegram-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 37px;
+      flex-shrink: 0;
+    }
+
+    .join-text strong {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .join-text span {
+      font-size: 17px;
+      color: #d9effc;
+    }
+
+    .redirect {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #8f8580;
+    }
+
+    .redirect b {
+      color: #ed5a1a;
+    }
+
+    .maxjohn {
+      margin-top: 42px;
+      padding-top: 22px;
+      border-top: 1px solid #241c17;
+    }
+
+    .maxjohn p {
+      font-size: 15px;
+      color: #83766c;
+      margin-bottom: 10px;
+    }
+
+    .maxjohn a {
+      color: #e87838;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .maxjohn a:hover {
+      color: #ff9b61;
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      color: #796b60;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 38px 20px 30px;
+      }
+
+      .profile-img {
+        width: 175px;
+        height: 175px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .stats {
+        gap: 10px;
+      }
+
+      .stat-box {
+        padding: 20px 5px;
+      }
+
+      .stat-box strong {
+        font-size: 23px;
+      }
+
+      .stat-box span {
+        font-size: 14px;
+      }
+
+      .feature {
+        font-size: 18px;
+        padding-left: 25px;
+      }
+
+      .join-btn {
+        padding: 19px 17px;
+        gap: 14px;
+      }
+
+      .telegram-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 30px;
+      }
+
+      .join-text strong {
+        font-size: 19px;
+      }
+
+      .join-text span {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- PHOTO: GitHub me profile.jpg naam se upload karna -->
+    <img src="profile.jpg" alt="Gautam Jha" class="profile-img">
+
+    <!-- CHANNEL NAME -->
+    <h1>GAUTAM JHA</h1>
+
+    <p class="subtitle">
+      Stock Market &amp; Financial Trading Education
+    </p>
+
+    <!-- VERIFIED BADGE -->
+    <div class="verified">
+      ✅ Verified Community
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+
+      <div class="stat-box">
+        <strong>100%</strong>
+        <span>Beginner</span>
+      </div>
+
+      <div class="stat-box">
+        <strong>Daily</strong>
+        <span>Updates</span>
+      </div>
+
+      <div class="stat-box">
+        <strong>Free</strong>
+        <span>Access</span>
+      </div>
+
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+
+      <div class="feature">
+        Daily market updates &amp; insights
+      </div>
+
+      <div class="feature">
+        Free educational content, no hidden fees
+      </div>
+
+      <div class="feature">
+        Easy explanations built for beginners
+      </div>
+
+      <div class="feature">
+        Full, active community support
+      </div>
+
+    </div>
+
+    <!-- MAIN TELEGRAM JOIN BUTTON -->
+    <!-- Apna actual Telegram channel link yahan lagana -->
+    <a
+      href="https://t.me/YOUR_TELEGRAM_LINK"
+      class="join-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="telegram-icon">✈️</div>
+
+      <div class="join-text">
+        <strong>Join Free Telegram Community</strong>
+        <span>Instant access • 100% free</span>
+      </div>
+
+    </a>
+
+    <!-- AUTO REDIRECT TIMER -->
+    <p class="redirect">
+      Auto-redirecting in <b>20s...</b>
+    </p>
+
+    <!-- MAXJOHN FOOTER -->
+    <div class="maxjohn">
+
+      <p>Landing page &amp; ads managed by</p>
+
+      <a
+        href="https://t.me/maxjohn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ads managed by Maxjohn
+      </a>
+
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      <b>Disclaimer:</b> This platform is for educational and informational
+      purposes only. We are not a SEBI-registered investment advisor.
+      We do not provide financial advice and do not guarantee any profits.
+      Stock market investments carry risk — please do your own research
+      before making any investment decisions.
+    </div>
+
+  </div>
+
+  <script>
+    // MAIN TELEGRAM LINK — yahan apna actual link lagao
+    const telegramLink = "https://t.me/YOUR_TELEGRAM_LINK";
+
+    let seconds = 20;
+    const redirectText = document.querySelector(".redirect");
+
+    const timer = setInterval(() => {
+      seconds--;
+
+      redirectText.innerHTML =
+        `Auto-redirecting in <b>${seconds}s...</b>`;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = telegramLink;
+      }
+
+    }, 1000);
+  </script>
+
+</body>
+</html>
